@@ -76,6 +76,8 @@ class Student
     first_student
   end
   
+  
+  
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade) 
