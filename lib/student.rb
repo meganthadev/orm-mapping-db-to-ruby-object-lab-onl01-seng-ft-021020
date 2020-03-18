@@ -76,7 +76,13 @@ class Student
     first_student
   end
   
-  
+   def self.all_students_in_grade_X(grade_num)
+    sql = <<-SQL
+      SELECT * FROM students WHERE grade = #{grade_num}
+    SQL
+
+      DB[:conn].execute(sql)
+  end
   
   def save
     sql = <<-SQL
